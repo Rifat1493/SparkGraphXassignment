@@ -46,7 +46,7 @@ public class Main {
         	Exercise_4_warmup.warmup(ctx,sqlctx);
         }
         else if (args[0].equals("exercise4")) {
-            Exercise_4.wikipedia(ctx,sqlctx);
+            Exercise_4.wikipedia1(ctx,sqlctx);
         }
         else {
 		    throw new Exception("Wrong exercise number");

@@ -20,15 +20,24 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Exercise_1 {
-
+public static int step = 0;
     private static class VProg extends AbstractFunction3<Long,Integer,Integer,Integer> implements Serializable {
         @Override
         public Integer apply(Long vertexID, Integer vertexValue, Integer message) {
-            if (message == Integer.MAX_VALUE) {             // superstep 0
+            if (message == Integer.MAX_VALUE) {
+
+                System.out.println("VertexID: " + vertexID + ", VertexValue: " + vertexValue+ ",  Received Message: " + message);
+                // superstep 0
+
                 return vertexValue;
-            } else {                                        // superstep > 0
+            } else {
+
+                System.out.println("VertexID: " + vertexID + ", VertexValue: " + vertexValue + ", Received Message: "+message+ " Changed value of the vertex: " + Math.max(vertexValue,message));
+                ;// superstep > 0
+
                 return Math.max(vertexValue,message);
             }
+
         }
     }
 
@@ -37,12 +46,20 @@ public class Exercise_1 {
         public Iterator<Tuple2<Object, Integer>> apply(EdgeTriplet<Integer, Integer> triplet) {
             Tuple2<Object,Integer> sourceVertex = triplet.toTuple()._1();
             Tuple2<Object,Integer> dstVertex = triplet.toTuple()._2();
+            //System.out.println("2. sendMsg: General. triplet: " + triplet);
+            //System.out.println("2. sendMsg: General. sourceVertex: " + sourceVertex);
+           // System.out.println("2. sendMsg: General. dstVertex: " + dstVertex);
 
             if (sourceVertex._2 <= dstVertex._2) {   // source vertex value is smaller than dst vertex?
                 // do nothing
+                System.out.println("No message sent from VID"+ sourceVertex._1+ " to VID"+ dstVertex._1);
+
                 return JavaConverters.asScalaIteratorConverter(new ArrayList<Tuple2<Object,Integer>>().iterator()).asScala();
             } else {
                 // propagate source vertex value
+
+                System.out.println("Message sent from VID" + sourceVertex._1+ " to VID"+ dstVertex._1+ " is "+ sourceVertex._2);
+
                 return JavaConverters.asScalaIteratorConverter(Arrays.asList(new Tuple2<Object,Integer>(triplet.dstId(),sourceVertex._2)).iterator()).asScala();
             }
         }
@@ -51,6 +68,7 @@ public class Exercise_1 {
     private static class merge extends AbstractFunction2<Integer,Integer,Integer> implements Serializable {
         @Override
         public Integer apply(Integer o, Integer o2) {
+            System.out.println("This is merge");
             return null;
         }
     }
@@ -85,6 +103,7 @@ public class Exercise_1 {
                 new VProg(),
                 new sendMsg(),
                 new merge(),
+
                 scala.reflect.ClassTag$.MODULE$.apply(Integer.class))
         .vertices().toJavaRDD().first();
 

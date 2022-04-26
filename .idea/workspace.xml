@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f926620-2fd6-4f38-885d-f6d99fed4543" name="Default Changelist" comment="" />
+    <list default="true" id="5f926620-2fd6-4f38-885d-f6d99fed4543" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercise_1/Exercise_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercise_1/Exercise_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercise_4/Exercise_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercise_4/Exercise_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiki-vertices-test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wiki-vertices-test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiki-vertices-test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wiki-vertices-test.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,12 +45,13 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RunManager" selected="Application.exercise1">
     <configuration name="exercise1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="spark_graphs_II" />
-      <option name="PROGRAM_PARAMETERS" value="exercise4" />
+      <option name="PROGRAM_PARAMETERS" value="exercise1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +111,11 @@
       <workItem from="1649363823410" duration="1321000" />
       <workItem from="1649755263573" duration="16815000" />
       <workItem from="1650281615851" duration="93000" />
-      <workItem from="1650281768692" duration="98000" />
+      <workItem from="1650281768692" duration="743000" />
+      <workItem from="1650660587687" duration="3687000" />
+      <workItem from="1650797176299" duration="3808000" />
+      <workItem from="1650905382252" duration="2416000" />
+      <workItem from="1650975245719" duration="9915000" />
     </task>
     <servers />
   </component>
