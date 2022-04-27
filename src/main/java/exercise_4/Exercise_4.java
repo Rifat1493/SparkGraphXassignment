@@ -112,44 +112,7 @@ public class Exercise_4 {
 
 
 	}
-
-	public static void wikipedia1(JavaSparkContext ctx, SQLContext sqlCtx) throws Exception {
-		SparkSession spark = SparkSession.builder()
-				.master("local[*]")
-				.appName("SparkByExamples.com")
-				.getOrCreate();
-
-		String vertice_path = "C:\\Users\\Rifat\\Desktop\\SparkGraphXassignment\\src\\main\\resources\\wiki-vertices-test.txt";
-		Dataset<Row> df1 = spark.read().text(vertice_path);
-		Dataset<Row> vertices = spark.emptyDataFrame();
-		vertices = df1.withColumn("id", split(col("value"), "\\t").getItem(0))
-				.withColumn("name", split(col("value"), "\\t").getItem(1)).drop(col("value"));
-
-
-		 Double result = vertices.orderBy(desc("name")).limit(2).agg(sum("name")).first().getDouble(0);
-
-		 System.out.println(result);
-
-		double damp_fact_list[] = {.75,.85,.90};
-		int i, j;
-
-        float prev =1, bst_dmp, bst_prev_percent, min_percent;
-		int bst_it;
-		// iterating over an array
-
-			for (j = 0; j < damp_fact_list.length; j++) {
-				for (i = 8; i < 15; i++) {
-
-				float x = 10;
-				float tmp = Math.abs((x-prev))/prev;
-				//System.out.println(tmp);
-
-				}
-
-			}
-
-	}
-
+	
 	}
 	
 
